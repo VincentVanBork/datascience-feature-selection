@@ -29,7 +29,8 @@ for number_components in [180, 120, 60, 30, 20]:
         # tf.keras.layers.Dense(int(number_components / 32), activation='relu'),
         tf.keras.layers.Dense(2, activation='softmax')
     ])
-    model.compile(optimizer='adam',
+    model.compile(optimizer='ftrl',
+
                   loss='categorical_crossentropy',
                   metrics=['accuracy'])
     epochs = 15

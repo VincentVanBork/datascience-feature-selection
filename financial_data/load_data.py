@@ -4,7 +4,7 @@ import tensorflow as tf
 from sklearn import preprocessing
 
 
-def drop_outliers(data, low=0.01, high=0.99):
+def drop_outliers(data, low=0.1, high=0.90):
     Q1 = data.quantile(low)
     Q3 = data.quantile(high)
     IQR = Q3 - Q1
