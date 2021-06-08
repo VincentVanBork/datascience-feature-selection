@@ -29,11 +29,10 @@ for number_components in [180, 120, 60, 30, 20]:
         # tf.keras.layers.Dense(int(number_components / 32), activation='relu'),
         tf.keras.layers.Dense(2, activation='softmax')
     ])
-    model.compile(optimizer='ftrl',
-
+    model.compile(optimizer='Adam',
                   loss='categorical_crossentropy',
                   metrics=['accuracy'])
-    epochs = 15
+    epochs = 40
 
     fig, ax = plt.subplots(ncols=2)
     year = 2018
@@ -63,9 +62,9 @@ for number_components in [180, 120, 60, 30, 20]:
     ax[1].set_xlabel("epoch")
     plt.show()
 
-    fig_variance, ax_variance = plt.subplots()
-    ax_variance.bar(range(len(pca.explained_variance_ratio_)), pca.explained_variance_ratio_)
-    plt.show()
+    # fig_variance, ax_variance = plt.subplots()
+    # ax_variance.bar(range(len(pca.explained_variance_ratio_)), pca.explained_variance_ratio_)
+    # plt.show()
 
 
     print("STARTING PREDICTION")
